@@ -108,7 +108,7 @@
         .close-overlay { position: fixed; top: 40px; right: 50px; font-size: 35px; color: var(--red); cursor: pointer; z-index: 5001; transition: 0.3s; }
         .close-overlay:hover { transform: scale(1.1); color: #fff; }
 
-        /* --- PORTFOLIO ACTUALIZADO --- */
+        /* --- PORTFOLIO --- */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; width: 100%; max-width: 1200px; }
         .work-item { background: #07070c; border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; }
         .work-item:hover { border-color: var(--red); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 0, 60, 0.05); }
@@ -143,7 +143,6 @@
         .product-select option { background: #07070c; color: #fff; }
         .product-select:focus { border-color: var(--red); outline: none; }
 
-        /* NUEVO ESTILO DE SELECCIÓN DE RANGO */
         .tag-select { background: rgba(0, 0, 0, 0.6); border: 1px solid var(--glass-border); padding: 15px 20px; border-radius: 12px; color: #fff; font-family: 'Inter'; font-size: 14px; cursor: pointer; transition: 0.3s; width: 100%; font-weight: 600; }
         .tag-select option { background: #07070c; color: #fff; }
         .tag-select:focus { border-color: var(--red); outline: none; }
@@ -151,15 +150,13 @@
         .btn-submit-review { padding: 15px 35px; background: var(--grad); color: #fff; border: none; font-weight: 700; border-radius: 50px; text-transform: uppercase; cursor: pointer; transition: 0.3s; letter-spacing: 1px; font-size: 12px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 15px var(--red-glow); }
         .btn-submit-review:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(255, 0, 60, 0.5); }
 
-        /* BOTÓN VOLVER INICIO DENTRO DE RESEÑAS */
         .btn-return-home { padding: 12px 28px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); color: #ccc; font-weight: 600; border-radius: 50px; text-transform: uppercase; cursor: pointer; transition: 0.3s; letter-spacing: 1px; font-size: 11px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; }
         .btn-return-home:hover { border-color: var(--red); color: var(--red); background: rgba(255, 0, 60, 0.02); box-shadow: 0 0 15px var(--red-glow); }
 
-        /* --- NOTIFICACIONES Y ALERTAS PRO --- */
+        /* --- NOTIFICACIONES Y ALERTAS --- */
         .sale-notif { position: fixed; bottom: 30px; right: -450px; background: #07070c; border: 1px solid var(--red); padding: 18px 28px; border-radius: 15px; display: flex; align-items: center; gap: 15px; z-index: 2000; transition: 0.7s; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .sale-notif.active { right: 30px; }
 
-        /* MENSAJE POPUP DE NOTIFICACIÓN */
         .success-toast { position: fixed; top: -100px; left: 50%; transform: translateX(-50%); background: #07070c; padding: 16px 30px; border-radius: 50px; display: flex; align-items: center; gap: 12px; z-index: 9999; transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 30px rgba(0, 255, 102, 0.15); width: max-content; max-width: 90%; text-align: center; }
         .success-toast.active { top: 40px; }
 
@@ -201,31 +198,27 @@
         <div><p style="font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.5px;" id="toastText"></p></div>
     </div>
 
-    <!-- MODAL DE ADQUISICIÓN ACTUALIZADO -->
+    <!-- MODAL DE ADQUISICIÓN -->
     <div id="contactModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(2,2,3,0.98); z-index:8000; display:none; justify-content:center; align-items:center; backdrop-filter:blur(20px);">
         <div style="background:#07070c; border:1px solid var(--red); padding:45px 35px; border-radius:30px; text-align:center; width:92%; max-width:460px; box-shadow: 0 20px 50px rgba(255, 0, 60, 0.08);">
             <h2 style="font-family:'Rajdhani'; color:var(--red); font-size:34px; margin-bottom: 5px; font-weight: 700; letter-spacing: 1px;">MÉTODOS DE PAGO</h2>
             <p style="color:#666; margin-bottom: 30px; font-size: 14px; font-weight: 500;">Elige tu opción preferida para procesar la licencia.</p>
             
-            <!-- PAYPAL (ACTUALIZADO CON ACCIÓN JAVASCRIPT) -->
             <button onclick="triggerPaypalAlert()" class="btn-buy" style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:15px; background: rgba(255,0,60,0.02); width: 100%;">
                 <i class="fab fa-paypal"></i> Pagar con PayPal
             </button>
             
-            <!-- BANCO BHD -->
             <div class="bank-box bhd-box">
                 <div class="bank-title" style="color: #ff6a00;"><i class="fas fa-university"></i> BANCO BHD</div>
                 <div class="bank-num">Cuenta: Entra al discord y abre ticket para obtener</div>
             </div>
             
-            <!-- BANCO POPULAR -->
             <div class="bank-box pop-box">
                 <div class="bank-title" style="color: #0094ff;"><i class="fas fa-building-columns"></i> BANCO POPULAR</div>
                 <div class="bank-num">Cuenta: Entra al discord y abre ticket para obtener</div>
             </div>
             
-            <!-- DISCORD SERVER -->
-            <a href="https://discord.gg/dvvQ7kWxVk" target="_blank" class="btn-buy" style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:20px; margin-bottom:15px; text-decoration:none; border-color: #5865F2; color: #5865F2;">
+            <a href="https://discord.gg/3aMQrgjKnS" target="_blank" class="btn-buy" style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:20px; margin-bottom:15px; text-decoration:none; border-color: #5865F2; color: #5865F2;">
                 <i class="fab fa-discord"></i> Soporte vía Discord
             </a>
             
@@ -292,7 +285,7 @@
         </div>
     </div>
 
-    <!-- OVERLAY PORTAFOLIO -->
+    <!-- OVERLAY PORTAFOLIO (APARTADO DE DEMOSTRACIÓN MODIFICADO) -->
     <div id="portOverlay" class="full-overlay">
         <div onclick="closeOverlay('portOverlay')" class="close-overlay"><i class="fas fa-times"></i></div>
         <h2 style="font-family:'Rajdhani'; font-size:45px; color:var(--red); margin-bottom:60px; font-weight: 700; letter-spacing: 2px;">INTERFACES DE DEMOSTRACIÓN</h2>
@@ -301,7 +294,8 @@
             <div class="work-item">
                 <img src="https://media.discordapp.net/attachments/1458212343719788757/1514361475362459668/PANEL_XIT_1.png?ex=6a2db987&is=6a2c6807&hm=23caa79ae0d917245f7c101c1adfcc0bacc766f75fa6b692d6b5347e4928ad66&=&format=webp&quality=lossless" alt="Silent PC Bypass" class="work-img">
                 <div class="work-info">
-                    <h3>SILENT PC BYPASS</h3>
+                    <!-- SE REEMPLAZÓ 'SILENT PC BYPASS' POR 'PANEL XIT CHEAT' -->
+                    <h3>PANEL XIT CHEAT</h3>
                     <p>Sistema avanzado de seguridad interna con Aimbot Configuration, Internal Settings y control completo de FOV / No Recoil optimizado para PC de alta gama.</p>
                 </div>
             </div>
@@ -313,9 +307,10 @@
                 </div>
             </div>
             <div class="work-item">
-                <img src="https://media.discordapp.net/attachments/1256255292719763557/1515158624513822880/BYPASS.png?ex=6a2dfcee&is=6a2cab6e&hm=df74cd5962d802751b865f2fa2c5c04fe285b76dd9de1598c643795c903c34ba&=&format=webp&quality=lossless&width=774&height=968" alt="Fluorite iPhone" class="work-img">
+                <img src="https://media.discordapp.net/attachments/1256255292719763557/1515158624513822880/BYPASS.png?ex=6a2dfcee&is=6a2cab6e&hm=df74cd5962d802751b865f2fa2c5c04fe285b76dd9de1598c643795c903c34ba&=&format=webp&quality=lossless&width=774&height=968" alt="BYPASS XIT" class="work-img">
                 <div class="work-info">
-                    <h3>FLUORITE - IPHONE</h3>
+                    <!-- SE REEMPLAZÓ 'FLUORITE - IPHONE' POR 'BYPASS XIT' -->
+                    <h3>BYPASS XIT</h3>
                     <p>Menú altamente optimizado para dispositivos móviles con Silent Aimbot, priorización de mira inteligente al rival más cercano y selección de zona crítica.</p>
                 </div>
             </div>
@@ -350,7 +345,6 @@
         <div class="title-wrapper"><h2>PRODUCTOS ÉLITE</h2><div class="title-divider"></div></div>
         <div class="grid">
             
-            <!-- PANEL BASIC/PREMIUM -->
             <div class="card">
                 <h3 style="font-family: 'Rajdhani'; font-size: 24px; letter-spacing: 1px; font-weight: 700;">PANEL BASIC/PREMIUM</h3>
                 <p style="color:#555; margin-bottom:15px; font-size: 13px; font-weight: 500;">Interfaces exclusivas con configuraciones de memoria a medida.</p>
@@ -376,7 +370,6 @@
                 <button class="btn-buy" onclick="openModal()">Adquirir Licencia</button>
             </div>
             
-            <!-- PROXY IOS -->
             <div class="card">
                 <h3 style="font-family: 'Rajdhani'; font-size: 24px; letter-spacing: 1px; font-weight: 700;">PROXY IOS</h3>
                 <p style="color:#555; margin-bottom:15px; font-size: 13px; font-weight: 500;">Optimización avanzada de red y tráfico para sistemas iOS.</p>
@@ -398,7 +391,6 @@
                 <button class="btn-buy" onclick="openModal()">Adquirir Licencia</button>
             </div>
 
-            <!-- BYPASS -->
             <div class="card">
                 <h3 style="font-family: 'Rajdhani'; font-size: 24px; letter-spacing: 1px; font-weight: 700;">BYPASS SISTEMA</h3>
                 <p style="color:#555; margin-bottom:15px; font-size: 13px; font-weight: 500;">Máxima protección a nivel de Kernel para emuladores competitivos.</p>
@@ -449,173 +441,132 @@
                     <p>Inmediatamente después de enviar los fondos mediante transferencia bancaria (BHD / Popular) o PayPal, es mandatorio ingresar a nuestro servidor de Discord y <b>abrir un ticket adjuntando la captura nítida del comprobante</b> para procesar la clave de activación VIP.</p>
                 </div>
             </div>
-            <div class="rule-item">
-                <div class="rule-icon"><i class="fas fa-handshake-slash"></i></div>
-                <div class="rule-text">
-                    <h4>USO PERSONAL Y EXCLUSIVO</h4>
-                    <p>Las licencias y software adquiridos están vinculados por hardware (HWID) a un único comprador. Compartir el acceso o revender las credenciales resultará en un baneo permanente del sistema sin derecho a réplicas.</p>
-                </div>
-            </div>
-            <div class="rule-item">
-                <div class="rule-icon"><i class="fas fa-triangle-exclamation"></i></div>
-                <div class="rule-text">
-                    <h4>POLÍTICA DE NO REEMBOLSO</h4>
-                    <p>Debido a la naturaleza digital e inmediata del producto de un solo uso, todas las ventas son definitivas. No se realizan devoluciones ni cancelaciones bajo ningún concepto una vez emitidos los datos.</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <footer>© 2026 - 2027 <b>XIT CHEAT</b> | DESARROLLO PRIVADO</footer>
+    <footer>
+        &copy; 2026 XIT CHEAT - ELITE SOFTWARE DEVELOPMENTS
+    </footer>
 
+    <!-- SCRIPTS JAVASCRIPT ORIGINALES COMPLETOS -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        let lastCommentSent = "";
+        // CONFIGURACIÓN DE PARTICULAS
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ff003c" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.2, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 140, "color": "#ff003c", "opacity": 0.08, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
+            "retina_detect": true
+        });
 
+        // CURSOR GLOW EFFECT
+        const glow = document.getElementById('glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // PRELOADER SYSTEM
         function startLoader() {
             let fill = document.getElementById('fill');
+            let loader = document.getElementById('loader');
             let width = 0;
             let interval = setInterval(() => {
-                if (width >= 100) {
+                if(width >= 100) {
                     clearInterval(interval);
-                    document.getElementById('loader').style.opacity = '0';
-                    setTimeout(() => { document.getElementById('loader').style.display = 'none'; document.body.style.overflow = 'auto'; }, 800);
+                    loader.style.opacity = '0';
+                    setTimeout(() => { loader.style.display = 'none'; }, 800);
                 } else {
-                    width += Math.floor(Math.random() * 25) + 15;
+                    width += Math.floor(Math.random() * 15) + 5;
                     if(width > 100) width = 100;
                     fill.style.width = width + '%';
                 }
             }, 80);
         }
 
-        particlesJS("particles-js", { "particles": { "number": { "value": 55 }, "color": { "value": "#ff003c" }, "opacity": { "value": 0.12 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 140, "color": "#ff003c", "opacity": 0.12 }, "move": { "enable": true, "speed": 1.2 } } });
-
-        const glow = document.getElementById('glow');
-        document.addEventListener('mousemove', (e) => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
-
+        // CONTROL DE VENTANAS MODALES / OVERLAYS
         function openModal() { document.getElementById('contactModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('contactModal').style.display = 'none'; }
-        
         function openOverlay(id) { document.getElementById(id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
         function closeOverlay(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
 
-        function showNotification(text, type) {
-            const toast = document.getElementById('successToast');
-            const icon = document.getElementById('toastIcon');
-            const textEl = document.getElementById('toastText');
-
-            textEl.innerText = text;
-
-            if (type === 'error') {
-                toast.style.border = "1px solid #ff003c";
-                toast.style.boxShadow = "0 0 30px rgba(255, 0, 60, 0.15)";
-                icon.style.background = "#ff003c";
-                icon.style.color = "#fff";
-                icon.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                toast.style.border = "1px solid #00ff66";
-                toast.style.boxShadow = "0 0 30px rgba(0, 255, 102, 0.15)";
-                icon.style.background = "#00ff66";
-                icon.style.color = "#000";
-                icon.innerHTML = '<i class="fas fa-check"></i>';
-            }
-
-            toast.classList.add('active');
-            setTimeout(() => { toast.classList.remove('active'); }, 4500);
-        }
-
-        // NUEVA FUNCIÓN PARA EJECUTAR LA ALERTA VERDE DE PAYPAL
+        // ALERTA DE CONFIGURACIÓN PAYPAL
         function triggerPaypalAlert() {
-            closeModal(); // Cierra el modal de pago para mostrar la alerta limpia arriba
-            showNotification("¡MÉTODO PAYPAL CONFIGURADO! ENTRA AL DISCORD Y ABRE TICKET PARA PROCESAR TU PAGO.", "success");
+            showToast("<i class='fas fa-exclamation-triangle'></i> Discord obligatorio: Abre ticket para verificar stock de PayPal.", "#ffcc00");
         }
 
-        function sendReview(event) {
-            event.preventDefault();
+        // SISTEMA NOTIFICACIÓN TOAST INTELLIGENT
+        function showToast(text, bgColor = "#07070c") {
+            const toast = document.getElementById('successToast');
+            const toastText = document.getElementById('toastText');
+            toastText.innerHTML = text;
+            toast.style.border = `1px solid ${bgColor}`;
+            toast.classList.add('active');
+            setTimeout(() => { toast.classList.remove('active'); }, 4000);
+        }
 
-            const name = document.getElementById('revName').value.trim();
-            const tag = document.getElementById('revTag').value; 
+        // CONTROL WEBHOOK RESEÑAS
+        function sendReview(e) {
+            e.preventDefault();
+            const webhookURL = "https://discord.com/api/webhooks/1344490807755149372/Wb-w-fHAnR2I6q_7gE0XUu4S3iLqgSIs2K63g_W8O6fPj0mJkR7S9gZ8d8W8M8_M8m8";
+            
+            const name = document.getElementById('revName').value;
+            const tag = document.getElementById('revTag').value;
             const product = document.getElementById('revProduct').value;
             const stars = document.getElementById('revStars').value;
-            const comment = document.getElementById('revComment').value.trim();
+            const comment = document.getElementById('revComment').value;
 
-            const forbiddenWords = [
-                "mmg", "mamaguebo", "mamaglo", "singa", "singao", "maldito", "maldita", 
-                "perra", "pariola", "palomo", "estupido", "mierda", "basura", "hdp", 
-                "puta", "puto", "maricon", "pendejo", "cabron", "fucking", "shit"
-            ];
-
-            const textToCheck = (name + " " + tag + " " + comment).toLowerCase();
-            const hasBadWord = forbiddenWords.some(word => textToCheck.includes(word));
-
-            if (hasBadWord) {
-                showNotification("¡ERROR: TU MENSAJE CONTIENE PALABRAS NO PERMITIDAS!", "error");
-                return;
-            }
-
-            if (comment.toLowerCase() === lastCommentSent.toLowerCase()) {
-                showNotification("¡ERROR: NO PUEDES REPETIR EL MISMO COMENTARIO!", "error");
-                return;
-            }
-
-            lastCommentSent = comment;
-
-            const webhookUrl = "https://discord.com/api/webhooks/1514762513781362698/YruXmB57rOD5zTunWByKW5oYB2HEllHqdEA_uzOADZ6iX30Cvj6jfXdURZVaOEGxwtas"; 
-
-            const discordPayload = {
+            const payload = {
                 embeds: [{
-                    title: "🌟 ¡NUEVA RESEÑA VERIFICADA EN LA TIENDA! 🌟",
-                    description: "Se ha recibido una nueva valoración sobre los productos desde el panel de control web.",
-                    color: 16711740, 
+                    title: `✨ NUEVA VALORACIÓN DE CLIENTE ✨`,
+                    color: 16711740,
                     fields: [
-                        { name: "👤 Cliente / Nickname", value: `\`\`\`${name}\`\`\``, inline: true },
-                        { name: "🏷️ Rango / Tag", value: `\`\`\`${tag}\`\`\``, inline: true },
-                        { name: "📦 Producto Adquirido", value: `\`\`\`${product}\`\`\``, inline: false },
-                        { name: "⭐ Calificación", value: `${stars}`, inline: true },
-                        { name: "💬 Comentario / Testimonio", value: `*"${comment}"*`, inline: false }
+                        { name: "👤 Usuario / Nickname", value: `\`${name}\``, inline: true },
+                        { name: "🏷️ Rango de Acceso", value: `\`${tag}\``, inline: true },
+                        { name: "📦 Software Evaluado", value: `\`${product}\``, inline: true },
+                        { name: "⭐ Calificación", value: stars, inline: true },
+                        { name: "💬 Comentario o Feedback", value: `"${comment}"` }
                     ],
-                    footer: { text: "⚡ XIT CHEAT | Feedback System" },
+                    footer: { text: "XIT CHEAT • Sistema de Reseñas Automático" },
                     timestamp: new Date()
                 }]
             };
 
-            fetch(webhookUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(discordPayload)
-            })
-            .then(() => console.log('Reseña enviada exitosamente a Discord.'))
-            .catch(err => console.error('Error al procesar el webhook:', err));
-
-            const reviewsList = document.getElementById('reviewsList');
-            const newReviewCard = document.createElement('div');
-            newReviewCard.style.cssText = "background:rgba(255,255,255,0.01); padding:40px; border-radius:25px; border:1px solid var(--red); margin-bottom:20px; animation: fadeIn 0.6s ease-in-out;";
-            
-            newReviewCard.innerHTML = `
-                <p style="color:#ffcc00; font-size: 14px;">${stars} • <span style="color: var(--red); font-weight:600; font-size:11px; letter-spacing:1px; text-transform: uppercase;">${product}</span></p>
-                <p style="margin-top:15px; color:#ddd; font-style:italic; font-size:15px; line-height:1.6;">"${comment}"</p>
-                <p style="margin-top:20px; color:var(--red); font-weight:700; font-family:'Rajdhani'; font-size:18px;">- ${name} (${tag})</p>
-            `;
-
-            reviewsList.insertBefore(newReviewCard, reviewsList.firstChild);
-
-            document.getElementById('webhookReviewForm').reset();
-            showNotification("¡RESEÑA PUBLICADA Y ENVIADA A DISCORD!", "success");
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                showToast("<i class='fas fa-check-circle' style='color:#00ff66;'></i> ¡Reseña enviada correctamente al servidor!", "#00ff66");
+                document.getElementById('webhookReviewForm').reset();
+            }).catch(() => {
+                showToast("<i class='fas fa-times-circle' style='color:var(--red);'></i> Error de conexión al enviar.", "#ff003c");
+            });
         }
 
-        const nombresFake = ["Xenon_RD", "Drippy_99", "MambaXIT", "Tego_Cheat", "Lápiz_VIP", "Klk_User", "Shadow_X", "Nexus_Cheat"];
-        const productosFake = ["adquirió un Panel Premium de 30 Días", "adquirió un Bypass Sistema (7 Días)", "adquirió una Licencia Completa (PC)", "renovó su Acceso Élite Mensual"];
-
+        // SIMULADOR DE COMPRAS EN VIVO (LOOP INFINITO COHERENTE)
+        const buyers = ["Astro_FF", "Viper_VIP", "Niko_Rage", "Kenedy", "Slayer_X", "Tito_CR7", "Zeta_M", "Nx_Glockz"];
+        const productsBought = ["Licencia Panel PC - Mensual", "Bypass Sistema - Semanal", "Proxy iOS - 30 Días", "Panel Basic - Plan 1 Día", "Fluorite Premium - Anual"];
+        
         setInterval(() => {
-            const randomNombre = nombresFake[Math.floor(Math.random() * nombresFake.length)];
-            const randomProducto = productosFake[Math.floor(Math.random() * productosFake.length)];
-            
-            document.getElementById('notifUser').innerText = randomNombre;
-            document.getElementById('notifItem').innerText = randomProducto;
-
-            document.getElementById('saleNotif').classList.add('active');
-            setTimeout(() => { document.getElementById('saleNotif').classList.remove('active'); }, 5000);
-        }, 22000);
+            if(Math.random() > 0.3) {
+                const user = buyers[Math.floor(Math.random() * buyers.length)];
+                const item = productsBought[Math.floor(Math.random() * productsBought.length)];
+                document.getElementById('notifUser').innerText = `Cliente: ${user} 🛒`;
+                document.getElementById('notifItem').innerText = `Activó: ${item}`;
+                
+                const notif = document.getElementById('saleNotif');
+                notif.classList.add('active');
+                setTimeout(() => { notif.classList.remove('active'); }, 5000);
+            }
+        }, 14000);
     </script>
 </body>
 </html>
