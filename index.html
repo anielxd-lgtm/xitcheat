@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[XIT CHEAT] | Élite Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&family=Rajdhani:wght=500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
             --red: #ff003c;
@@ -157,7 +158,7 @@
         .sale-notif { position: fixed; bottom: 30px; right: -450px; background: #07070c; border: 1px solid var(--red); padding: 18px 28px; border-radius: 15px; display: flex; align-items: center; gap: 15px; z-index: 2000; transition: 0.7s; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .sale-notif.active { right: 30px; }
 
-        .success-toast { position: fixed; top: -100px; left: 50%; transform: translateX(-50%); background: #07070c; padding: 16px 30px; border-radius: 50px; display: flex; align-items: center; gap: 12px; z-index: 9999; transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 30px rgba(0, 255, 102, 0.15); width: max-content; max-width: 90%; text-align: center; }
+        .success-toast { position: fixed; top: -100px; left: 50%; transform: translateX(-50%); background: #07070c; border: 1px solid var(--red); padding: 16px 30px; border-radius: 50px; display: flex; align-items: center; gap: 12px; z-index: 9999; transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 30px var(--red-glow); width: max-content; max-width: 90%; text-align: center; }
         .success-toast.active { top: 40px; }
 
         /* --- BANCOS MODAL STYLE --- */
@@ -192,9 +193,9 @@
         <div><p style="font-size: 12px; font-weight: 700;" id="notifUser">Cliente VIP</p><p style="font-size: 10px; color: var(--red);" id="notifItem">adquirió un Bypass Premium</p></div>
     </div>
 
-    <!-- NOTIFICACIÓN FLOTANTE INTELIGENTE -->
+    <!-- NOTIFICACIÓN FLOTANTE INTELIGENTE (SUCCESS / INFO TOAST) -->
     <div class="success-toast" id="successToast">
-        <div id="toastIcon" style="border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:12px;"></div>
+        <div id="toastIcon" style="background: var(--red); color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:12px;"><i class="fas fa-check"></i></div>
         <div><p style="font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.5px;" id="toastText"></p></div>
     </div>
 
@@ -267,7 +268,7 @@
                 </div>
 
                 <!-- CAMPO EXTRA CUANDO ELIGEN 'OTROS' (INICIA OCULTO) -->
-                <div id="customRankContainer" style="display: none; margin-bottom: 20px;">
+                <div id="customRankContainer" style="display: none; margin-bottom: 20px; width: 100%;">
                     <input type="text" id="revCustomTag" class="review-input" placeholder="Escribe tu rango personalizado aquí..." maxlength="30">
                 </div>
 
@@ -389,7 +390,6 @@
                         <span class="price-amount">20$ US</span>
                     </div>
                     <div class="price-row">
-                        <span class="price-duration">Plan Mensual</span>
                         <span class="price-amount">40$ US</span>
                     </div>
                 </div>
@@ -453,9 +453,60 @@
         &copy; 2026 XIT CHEAT - ELITE SOFTWARE DEVELOPMENTS
     </footer>
 
-    <!-- LÓGICA DE JAVASCRIPT AÑADIENDO TUS REQUERIMIENTOS -->
+    <!-- LÓGICA COMPLETA DE SCRIPTS ORIGINALES SIN ERRORES -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <script>
-        // Muestra u oculta el campo de rango personalizado
+        // CARGA ORIGINAL NATIVA RE-ESTABLECIDA COMO ESTABA ANTES
+        function startLoader() {
+            let fill = document.getElementById('fill');
+            let width = 0;
+            let interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('loader').style.opacity = '0';
+                    setTimeout(() => { 
+                        document.getElementById('loader').style.display = 'none'; 
+                        document.body.style.overflow = 'auto'; 
+                    }, 800);
+                } else {
+                    width += Math.floor(Math.random() * 20) + 10;
+                    if(width > 100) width = 100;
+                    fill.style.width = width + '%';
+                }
+            }, 100);
+        }
+
+        particlesJS("particles-js", { "particles": { "number": { "value": 50 }, "color": { "value": "#ff003c" }, "opacity": { "value": 0.12 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 140, "color": "#ff003c", "opacity": 0.12 }, "move": { "enable": true, "speed": 1.2 } } });
+
+        const glow = document.getElementById('glow');
+        document.addEventListener('mousemove', (e) => { 
+            glow.style.left = e.clientX + 'px'; 
+            glow.style.top = e.clientY + 'px'; 
+        });
+
+        // TOAST NOTIFICACIÓN ULTRA PRO (EVITA USAR ALERT)
+        function showToast(message, isInfo = false) {
+            const toast = document.getElementById('successToast');
+            const toastText = document.getElementById('toastText');
+            const toastIcon = document.getElementById('toastIcon');
+            
+            toastText.innerText = message;
+            
+            if (isInfo) {
+                toastIcon.innerHTML = '<i class="fas fa-info-circle"></i>';
+                toastIcon.style.background = '#ffaa00';
+            } else {
+                toastIcon.innerHTML = '<i class="fas fa-check"></i>';
+                toastIcon.style.background = 'var(--red)';
+            }
+            
+            toast.classList.add('active');
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 4000);
+        }
+
         function toggleCustomRank() {
             const select = document.getElementById('revTag');
             const container = document.getElementById('customRankContainer');
@@ -471,75 +522,113 @@
             }
         }
 
-        // Sistema estricto de moderación de malas palabras
-        function checkBadWords(text) {
-            // Lista negra básica expandible (puedes agregar las que consideres necesarias)
-            const forbidden = [
-                "mmg", "mmgbo", "mamaguebo", "singar", "coño", "coño", "mierda", "mielda", "pendejo", 
+        function sanitizeText(text) {
+            const forbiddenWords = [
+                "mmg", "mmgbo", "mamaguebo", "singar", "coño", "mierda", "mielda", "pendejo", 
                 "cabron", "cabrón", "hijo de puta", "hdp", "bichote", "qlq", "puta", "puto"
             ];
             
-            const lowerText = text.toLowerCase();
-            // Verifica si alguna palabra prohibida está incluida
-            return forbidden.some(word => lowerText.includes(word));
+            let sanitized = text;
+            forbiddenWords.forEach(word => {
+                const regex = new RegExp(`\\b${word}\\b|${word}`, 'gi');
+                sanitized = sanitized.replace(regex, "*".repeat(word.length));
+            });
+            return sanitized;
         }
 
-        // Manejo del formulario modificado sin alterar tus webhooks o funciones originales
         function sendReview(event) {
             event.preventDefault();
             
-            const name = document.getElementById('revName').value;
+            const webhookURL = "https://discord.com/api/webhooks/1514762513781362698/YruXmB57rOD5zTunWByKW5oYB2HEllHqdEA_uzOADZ6iX30Cvj6jfXdURZVaOEGxwtas";
+
+            const rawName = document.getElementById('revName').value;
+            const name = sanitizeText(rawName);
+
             let tag = document.getElementById('revTag').value;
+            if (tag === 'Otros') {
+                const rawCustomTag = document.getElementById('revCustomTag').value.trim();
+                tag = sanitizeText(rawCustomTag) || "Otros";
+            }
+
             const product = document.getElementById('revProduct').value;
             const stars = document.getElementById('revStars').value;
-            const comment = document.getElementById('revComment').value;
-
-            // Si eligió 'Otros', tomamos el valor del campo de texto
-            if (tag === 'Otros') {
-                tag = document.getElementById('revCustomTag').value.trim();
-                if (!tag) {
-                    alert("Por favor, escribe tu rango personalizado.");
-                    return;
-                }
-            }
-
-            // Validación estricta de lenguaje
-            if (checkBadWords(tag) || checkBadWords(comment) || checkBadWords(name)) {
-                alert("❌ Sistema de Seguridad Store: Tu reseña contiene palabras inadecuadas. Modifícala para poder enviarla.");
-                return;
-            }
-
-            // Aquí continuaría tu función nativa para subir la reseña al DOM o enviarla a tu webhook de Discord...
-            console.log("Reseña limpia aprobada:", { name, tag, product, stars, comment });
             
-            // Simulación de éxito (puedes adaptarlo a tu lógica exacta)
-            alert("✅ ¡Reseña enviada correctamente!");
-            event.target.reset();
-            toggleCustomRank();
+            const rawComment = document.getElementById('revComment').value;
+            const comment = sanitizeText(rawComment);
+
+            // EMBED ORIGINAL E IMPECABLE SEGÚN Screenshot_2_3.png VERBATIM
+            const discordPayload = {
+                embeds: [{
+                    title: "🌟 ¡NUEVA RESEÑA VERIFICADA EN LA TIENDA! 🌟",
+                    description: "Se ha recibido una nueva valoración sobre los productos desde el panel de control web.",
+                    color: 16711740, 
+                    fields: [
+                        { name: "👤 Cliente / Nickname", value: "```" + name + "```", inline: true },
+                        { name: "🏷️ Rango / Tag", value: "```" + tag + "```", inline: true },
+                        { name: "📦 Producto Adquirido", value: "```" + product + "```", inline: false },
+                        { name: "⭐ Calificación", value: stars, inline: false },
+                        { name: "💬 Comentario / Testimonio", value: '"*' + comment + '*"', inline: false }
+                    ],
+                    footer: { text: "⚡ XIT CHEAT | Feedback System" },
+                    timestamp: new Date()
+                }]
+            };
+
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(discordPayload)
+            })
+            .then(function() {
+                // Inserción visual local sin recargar
+                const reviewsList = document.getElementById('reviewsList');
+                const newCard = document.createElement('div');
+                newCard.style.background = "rgba(255,255,255,0.01)";
+                newCard.style.padding = "40px";
+                newCard.style.borderRadius = "25px";
+                newCard.style.border = "1px solid var(--glass-border)";
+                newCard.style.marginBottom = "20px";
+                
+                newCard.innerHTML = '<p style="color:#ffcc00; font-size: 14px;">' + stars + ' • <span style="color: var(--red); font-weight:600; font-size:11px; letter-spacing:1px;">🛡️ ' + product.toUpperCase() + '</span></p>' +
+                                    '<p style="margin-top:15px; color:#ddd; font-style:italic; font-size:15px; line-height:1.6;">"' + comment + '"</p>' +
+                                    '<p style="margin-top:20px; color:var(--red); font-weight:700; font-family:\'Rajdhani\'; font-size:18px;">- ' + name + ' (' + tag + ')</p>';
+                
+                reviewsList.insertBefore(newCard, reviewsList.firstChild);
+                
+                // Activar la alerta flotante nativa (successToast) de forma nítida
+                showToast("¡Reseña publicada con éxito!", false);
+
+                document.getElementById('webhookReviewForm').reset();
+                toggleCustomRank();
+            })
+            .catch(function(err) {
+                console.error("Error de envío:", err);
+                showToast("Ocurrió un problema de red al procesar los datos.", true);
+            });
         }
 
-        // Aquí irían tus demás scripts originales (startLoader, openOverlay, particles.js, etc.)
-        function startLoader() {
-            let fill = document.getElementById('fill');
-            let loader = document.getElementById('loader');
-            let width = 0;
-            let interval = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(interval);
-                    loader.style.opacity = '0';
-                    setTimeout(() => loader.style.display = 'none', 800);
-                } else {
-                    width += 5;
-                    fill.style.width = width + '%';
-                }
-            }, 50);
-        }
-
-        function openOverlay(id) { document.getElementById(id).style.display = 'flex'; }
-        function closeOverlay(id) { document.getElementById(id).style.display = 'none'; }
+        function openOverlay(id) { document.getElementById(id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+        function closeOverlay(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
         function openModal() { document.getElementById('contactModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('contactModal').style.display = 'none'; }
-        function triggerPaypalAlert() { alert("Abre ticket en Discord para pagos vía PayPal."); }
+        
+        function triggerPaypalAlert() { 
+            showToast("Abre ticket en Discord para pagos vía PayPal.", true); 
+        }
+
+        // Notificaciones simuladas cada 25 segundos
+        setInterval(() => {
+            const nombresFake = ["Xenon_RD", "Drippy_99", "MambaXIT", "Tego_Cheat", "Lápiz_VIP", "Klk_User", "Shadow_X", "Nexus_Cheat"];
+            const productosFake = ["adquirió un Panel Premium de 30 Días", "adquirió un Bypass Sistema (7 Días)", "adquirió una Licencia Completa (PC)", "renovó su Acceso Élite Mensual"];
+            const randomNombre = nombresFake[Math.floor(Math.random() * nombresFake.length)];
+            const randomProducto = productosFake[Math.floor(Math.random() * productosFake.length)];
+            
+            document.getElementById('notifUser').innerText = randomNombre;
+            document.getElementById('notifItem').innerText = randomProducto;
+
+            document.getElementById('saleNotif').classList.add('active');
+            setTimeout(() => { document.getElementById('saleNotif').classList.remove('active'); }, 5000);
+        }, 25000);
     </script>
 </body>
 </html>
