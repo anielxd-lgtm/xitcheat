@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[XIT CHEAT] | Élite Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&family=Rajdhani:wght=500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -20,7 +20,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { background-color: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-        /* --- PRE-LOADER --- */
         #loader {
             position: fixed; width: 100%; height: 100%; background: var(--bg);
             display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -33,7 +32,6 @@
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
         .cursor-glow { position: fixed; top: 0; left: 0; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255, 0, 60, 0.04) 0%, transparent 70%); pointer-events: none; transform: translate(-50%, -50%); z-index: 1; }
 
-        /* --- NAV --- */
         nav {
             position: fixed; top: 0; width: 100%; padding: 20px 8%;
             display: flex; justify-content: space-between; align-items: center;
@@ -45,7 +43,6 @@
         .nav-links a { color: #999; text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; transition: 0.3s; letter-spacing: 1px; }
         .nav-links a:hover { color: var(--red); }
 
-        /* --- BOTONES FLOTANTES --- */
         .float-btn {
             position: fixed; background: rgba(3, 3, 5, 0.9); border: 1px solid var(--red);
             padding: 14px 22px; border-radius: 50px; cursor: pointer; z-index: 900; transition: 0.3s;
@@ -54,10 +51,10 @@
         }
         .btn-rev { right: 30px; bottom: 40px; }
         .btn-port { right: 30px; bottom: 105px; }
+        .btn-resellers { right: 30px; bottom: 170px; }
         .float-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--red-glow); background: var(--red); color: #000; }
         .float-btn:hover i { color: #000 !important; }
 
-        /* --- HERO --- */
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; z-index: 10; position: relative; padding: 0 20px; }
         .hero h1 { font-family: 'Rajdhani'; font-size: clamp(45px, 9vw, 95px); line-height: 0.85; margin-bottom: 25px; font-weight: 700; letter-spacing: -1px; }
         .hero h1 span { color: var(--red); text-shadow: 0 0 35px var(--red-glow); }
@@ -66,18 +63,15 @@
         .btn-main { padding: 18px 55px; background: var(--grad); color: #fff; text-decoration: none; font-weight: 700; border-radius: 50px; text-transform: uppercase; box-shadow: 0 0 30px var(--red-glow); transition: 0.4s; letter-spacing: 1px; font-size: 14px; }
         .btn-main:hover { transform: translateY(-3px); box-shadow: 0 0 45px rgba(255, 0, 60, 0.6); }
 
-        /* --- SECCIONES --- */
         .section { padding: 120px 8%; position: relative; z-index: 10; }
         .title-wrapper { text-align: center; margin-bottom: 80px; font-family: 'Rajdhani'; }
         .title-wrapper h2 { font-size: 42px; text-transform: uppercase; letter-spacing: 5px; font-weight: 700; }
         .title-divider { width: 60px; height: 4px; background: var(--red); margin: 15px auto; border-radius: 10px; box-shadow: 0 0 10px var(--red); }
 
-        /* --- CARDS & FAQ --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
         .card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 25px; padding: 40px 30px; text-align: center; transition: 0.4s; backdrop-filter: blur(15px); display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { border-color: var(--red); transform: translateY(-10px); background: rgba(255, 0, 60, 0.03); box-shadow: 0 15px 35px rgba(255, 0, 60, 0.05); }
         
-        /* ESTILOS DE PRECIOS */
         .price-container { margin: 25px 0 35px; text-align: left; background: rgba(0, 0, 0, 0.4); padding: 18px 22px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.03); }
         .price-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .price-row:last-child { border-bottom: none; }
@@ -91,7 +85,6 @@
         .faq-card h4 { font-family: 'Rajdhani'; font-size: 22px; margin-bottom: 10px; color: #fff; letter-spacing: 0.5px; }
         .faq-card p { color: #aaa; font-size: 15px; line-height: 1.6; }
 
-        /* --- REGLAS / NORMATIVA STYLE --- */
         .rules-wrapper { max-width: 950px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 25px; padding: 50px; backdrop-filter: blur(15px); }
         .rule-item { display: flex; align-items: flex-start; gap: 25px; margin-bottom: 30px; }
         .rule-item:last-child { margin-bottom: 0; }
@@ -99,7 +92,6 @@
         .rule-text h4 { font-family: 'Rajdhani'; font-size: 22px; color: #fff; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
         .rule-text p { color: #aaa; font-size: 14px; line-height: 1.6; }
 
-        /* --- OVERLAYS --- */
         .full-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(3, 3, 5, 0.98); z-index: 5000; display: none;
@@ -109,27 +101,17 @@
         .close-overlay { position: fixed; top: 40px; right: 50px; font-size: 35px; color: var(--red); cursor: pointer; z-index: 5001; transition: 0.3s; }
         .close-overlay:hover { transform: scale(1.1); color: #fff; }
 
-        /* --- PORTFOLIO --- */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; width: 100%; max-width: 1200px; }
         .work-item { background: #07070c; border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; }
         .work-item:hover { border-color: var(--red); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 0, 60, 0.05); }
         
-        .work-img { 
-            width: 100%; 
-            height: auto; 
-            max-height: 450px;
-            object-fit: cover; 
-            display: block;
-            border-bottom: 1px solid var(--glass-border);
-            transition: 0.5s ease;
-        }
+        .work-img { width: 100%; height: auto; max-height: 450px; object-fit: cover; display: block; border-bottom: 1px solid var(--glass-border); transition: 0.5s ease; }
         .work-item:hover .work-img { filter: brightness(1.15); }
         
         .work-info { padding: 25px; background: #050508; flex-grow: 1; }
         .work-info h3 { color: var(--red); font-family: 'Rajdhani'; margin-bottom: 10px; font-size: 24px; font-weight: 700; letter-spacing: 0.5px; }
         .work-info p { font-size: 14px; color: #aaa; line-height: 1.6; }
 
-        /* --- ESTILOS COMPONENTES FORMULARIO DE RESEÑAS --- */
         .review-form-container { background: rgba(255, 255, 255, 0.01); border: 1px solid var(--red); padding: 35px; border-radius: 25px; width: 100%; max-width: 850px; margin-bottom: 40px; backdrop-filter: blur(10px); box-shadow: 0 0 25px rgba(255, 0, 60, 0.05); }
         .review-form-container h3 { font-family: 'Rajdhani'; font-size: 26px; color: #fff; margin-bottom: 20px; font-weight: 700; letter-spacing: 1px; }
         .review-input-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 20px; }
@@ -154,14 +136,12 @@
         .btn-return-home { padding: 12px 28px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); color: #ccc; font-weight: 600; border-radius: 50px; text-transform: uppercase; cursor: pointer; transition: 0.3s; letter-spacing: 1px; font-size: 11px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; }
         .btn-return-home:hover { border-color: var(--red); color: var(--red); background: rgba(255, 0, 60, 0.02); box-shadow: 0 0 15px var(--red-glow); }
 
-        /* --- NOTIFICACIONES Y ALERTAS --- */
         .sale-notif { position: fixed; bottom: 30px; right: -450px; background: #07070c; border: 1px solid var(--red); padding: 18px 28px; border-radius: 15px; display: flex; align-items: center; gap: 15px; z-index: 2000; transition: 0.7s; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .sale-notif.active { right: 30px; }
 
         .success-toast { position: fixed; top: -100px; left: 50%; transform: translateX(-50%); background: #07070c; border: 1px solid var(--red); padding: 16px 30px; border-radius: 50px; display: flex; align-items: center; gap: 12px; z-index: 9999; transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 0 30px var(--red-glow); width: max-content; max-width: 90%; text-align: center; }
         .success-toast.active { top: 40px; }
 
-        /* --- BANCOS MODAL STYLE --- */
         .bank-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; padding: 15px; margin-bottom: 12px; text-align: left; position: relative; overflow: hidden; }
         .bank-box::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; }
         
@@ -170,6 +150,21 @@
 
         .bank-title { font-family: 'Rajdhani'; font-weight: 700; font-size: 13px; letter-spacing: 1px; margin-bottom: 3px; display: flex; align-items: center; gap: 8px; }
         .bank-num { color: #fff; font-weight: 700; font-size: 14px; font-family: 'Inter', sans-serif; opacity: 0.9; }
+
+        .reseller-container { background: rgba(255, 255, 255, 0.01); border: 1px solid var(--red); padding: 40px; border-radius: 25px; width: 100%; max-width: 650px; backdrop-filter: blur(15px); box-shadow: 0 0 35px rgba(255,0,60,0.08); text-align: left; }
+        .reseller-container h3 { font-family: 'Rajdhani'; font-size: 28px; color: #fff; margin-bottom: 8px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; text-shadow: 0 0 10px var(--red-glow); }
+        .reseller-sub { color: #aaa; font-size: 14px; margin-bottom: 25px; }
+        .reseller-item-box { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 15px; padding: 20px; margin-bottom: 15px; border-left: 4px solid var(--red); display: flex; justify-content: space-between; align-items: center; }
+        .reseller-item-info p { font-size: 12px; color: #777; margin-bottom: 2px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+        .reseller-item-info h4 { font-family: 'Rajdhani'; font-size: 20px; color: #fff; font-weight: 700; letter-spacing: 0.5px; }
+        .btn-copy-fast { background: var(--grad); border: none; padding: 10px 18px; border-radius: 50px; color: #fff; font-size: 11px; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
+        .btn-copy-fast:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--red-glow); }
+        .admin-section { border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 30px; margin-top: 30px; }
+        .reseller-list-admin { max-height: 200px; overflow-y: auto; margin-top: 15px; border: 1px solid rgba(255,255,255,0.03); border-radius: 12px; padding: 10px; background: rgba(0,0,0,0.3); }
+        .reseller-list-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.02); font-size: 13px; }
+        .reseller-list-item:last-child { border-bottom: none; }
+        .btn-delete-reseller { background: none; border: none; color: #ff003c; cursor: pointer; font-size: 14px; transition: 0.3s; }
+        .btn-delete-reseller:hover { transform: scale(1.1); color: #fff; }
 
         footer { padding: 60px; text-align: center; border-top: 1px solid var(--glass-border); color: #333; font-size: 11px; letter-spacing: 2px; font-weight: 600; }
     </style>
@@ -186,20 +181,18 @@
 
     <div class="float-btn btn-rev" onclick="openOverlay('reviewsOverlay')"><i class="fas fa-star" style="color: var(--red);"></i><span>Reseñas</span></div>
     <div class="float-btn btn-port" onclick="openOverlay('portOverlay')"><i class="fas fa-shield-halved" style="color: var(--red);"></i><span>Demostración</span></div>
+    <div class="float-btn btn-resellers" onclick="openOverlay('resellersOverlay')"><i class="fas fa-users" style="color: var(--red);"></i><span>Revendedores</span></div>
 
-    <!-- NOTIFICACIÓN DE VENTAS SIMULADAS -->
     <div class="sale-notif" id="saleNotif">
         <div style="background: var(--red); color:#fff; border-radius:50%; width:35px; height:35px; display:flex; align-items:center; justify-content:center; box-shadow: 0 0 10px var(--red);"><i class="fas fa-check"></i></div>
         <div><p style="font-size: 12px; font-weight: 700;" id="notifUser">Cliente VIP</p><p style="font-size: 10px; color: var(--red);" id="notifItem">adquirió un Bypass Premium</p></div>
     </div>
 
-    <!-- NOTIFICACIÓN FLOTANTE INTELIGENTE (SUCCESS / INFO TOAST) -->
     <div class="success-toast" id="successToast">
         <div id="toastIcon" style="background: var(--red); color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; font-size:12px;"><i class="fas fa-check"></i></div>
         <div><p style="font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.5px;" id="toastText"></p></div>
     </div>
 
-    <!-- MODAL DE ADQUISICIÓN -->
     <div id="contactModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(2,2,3,0.98); z-index:8000; display:none; justify-content:center; align-items:center; backdrop-filter:blur(20px);">
         <div style="background:#07070c; border:1px solid var(--red); padding:45px 35px; border-radius:30px; text-align:center; width:92%; max-width:460px; box-shadow: 0 20px 50px rgba(255, 0, 60, 0.08);">
             <h2 style="font-family:'Rajdhani'; color:var(--red); font-size:34px; margin-bottom: 5px; font-weight: 700; letter-spacing: 1px;">MÉTODOS DE PAGO</h2>
@@ -227,7 +220,6 @@
         </div>
     </div>
 
-    <!-- OVERLAY RESEÑAS -->
     <div id="reviewsOverlay" class="full-overlay">
         <div onclick="closeOverlay('reviewsOverlay')" class="close-overlay"><i class="fas fa-times"></i></div>
         <h2 style="font-family:'Rajdhani'; font-size:45px; color:var(--red); margin-bottom:15px; font-weight: 700; letter-spacing: 2px;">RESEÑAS VERIFICADAS</h2>
@@ -267,7 +259,6 @@
                     </select>
                 </div>
 
-                <!-- CAMPO EXTRA CUANDO ELIGEN 'OTROS' (INICIA OCULTO) -->
                 <div id="customRankContainer" style="display: none; margin-bottom: 20px; width: 100%;">
                     <input type="text" id="revCustomTag" class="review-input" placeholder="Escribe tu rango personalizado aquí..." maxlength="30">
                 </div>
@@ -293,28 +284,27 @@
         </div>
     </div>
 
-    <!-- OVERLAY PORTAFOLIO -->
     <div id="portOverlay" class="full-overlay">
         <div onclick="closeOverlay('portOverlay')" class="close-overlay"><i class="fas fa-times"></i></div>
         <h2 style="font-family:'Rajdhani'; font-size:45px; color:var(--red); margin-bottom:60px; font-weight: 700; letter-spacing: 2px;">INTERFACES DE DEMOSTRACIÓN</h2>
         
         <div class="portfolio-grid">
             <div class="work-item">
-                <img src="https://media.discordapp.net/attachments/1458212343719788757/1514361475362459668/PANEL_XIT_1.png?ex=6a2db987&is=6a2c6807&hm=23caa79ae0d917245f7c101c1adfcc0bacc766f75fa6b692d6b5347e4928ad66&=&format=webp&quality=lossless" alt="Silent PC Bypass" class="work-img">
+                <img src="https://media.discordapp.net/attachments/1458212343719788757/1514361475362459668/PANEL_XIT_1.png?ex=6a3c3a07&is=6a3ae887&hm=21406c83020ca90d846437f8c67ab707e4823605158597f6eb53b4354103581a&=&format=webp&quality=lossless&width=400&height=225" alt="Silent PC Bypass" class="work-img">
                 <div class="work-info">
                     <h3>PANEL XIT CHEAT</h3>
                     <p>Sistema avanzado de seguridad interna con Aimbot Configuration, Internal Settings y control completo de FOV / No Recoil optimizado para PC de alta gama.</p>
                 </div>
             </div>
             <div class="work-item">
-                <img src="https://media.discordapp.net/attachments/1393718413674938482/1514363517128544297/Panel_IOS.png?ex=6a2dbb6d&is=6a2c69ed&hm=0aa6fedb80a9a28a3095a3eef0f30a04a534bed50bcdfa133ff6a4a3dceec40f&=&format=webp&quality=lossless" alt="Proxi iPhone" class="work-img">
+                <img src="https://cdn.discordapp.com/attachments/1393718413674938482/1514363517128544297/Panel_IOS.png?ex=6a3c3bed&is=6a3aea6d&hm=f36c5eddc6f25d5210ef719973c0d09f7974ac9e73fd0a013568d8a6d9a7232c" alt="Proxi iPhone" class="work-img">
                 <div class="work-info">
-                    <h3>PROXI IPHONE PANEL</h3>
-                    <p>Interfaz iOS externa y discreta que incluye funciones premium: Holograma (ESP), Aimbot Pecho automático y cálculo de Balas Mágicas sin retraso.</p>
+                    <h3>NO DISPONIBLE</h3>
+                    <p>NO DISPO.</p>
                 </div>
             </div>
             <div class="work-item">
-                <img src="https://media.discordapp.net/attachments/1256255292719763557/1515158624513822880/BYPASS.png?ex=6a2dfcee&is=6a2cab6e&hm=df74cd5962d802751b865f2fa2c5c04fe285b76dd9de1598c643795c903c34ba&=&format=webp&quality=lossless&width=774&height=968" alt="BYPASS XIT" class="work-img">
+                <img src="https://media.discordapp.net/attachments/1514312791174021133/1515176324174708786/BYPASS.png?ex=6a3be52a&is=6a3a93aa&hm=b89a23b508850b4225acc6aafaeb0301149a194b92eb74c9a01b395c6e727eb4&=&format=webp&quality=lossless&width=774&height=968" alt="BYPASS XIT" class="work-img">
                 <div class="work-info">
                     <h3>BYPASS XIT</h3>
                     <p>Menú altamente optimizado para dispositivos móviles con Silent Aimbot, priorización de mira inteligente al rival más cercano y selección de zona crítica.</p>
@@ -323,7 +313,110 @@
         </div>
     </div>
 
-    <!-- NAVEGACIÓN -->
+    <div id="resellersOverlay" class="full-overlay">
+        <div onclick="closeOverlay('resellersOverlay')" class="close-overlay"><i class="fas fa-times"></i></div>
+        <h2 style="font-family:'Rajdhani'; font-size:45px; color:var(--red); margin-bottom:15px; font-weight: 700; letter-spacing: 2px;">ACCESO REVENDEDORES</h2>
+        
+        <button class="btn-return-home" onclick="closeOverlay('resellersOverlay')">
+            <i class="fas fa-arrow-left"></i> Volver al Inicio
+        </button>
+
+        <div class="reseller-container">
+            <div id="resellerLoginForm">
+                <h3>Identificación Obligatoria</h3>
+                <p class="reseller-sub">Ingresa tu cuenta asignada por el dueño. Su uso está estrictamente bloqueado a tu dispositivo principal para evitar que la compartas.</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <input type="text" id="resellerUser" class="review-input" placeholder="Nombre de Usuario / Nick" style="margin-bottom: 12px;" required>
+                    <input type="password" id="resellerPass" class="review-input" placeholder="Contraseña Segura" required>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button onclick="loginReseller()" class="btn-submit-review" style="padding: 14px 40px;"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+                    <a href="#" onclick="toggleAdminView(true)" style="font-size: 11px; text-transform: uppercase; color: #555; font-weight: 700; text-decoration: none; letter-spacing: 1px;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='#555'">Acceso Admin</a>
+                </div>
+            </div>
+
+            <div id="adminLoginForm" style="display: none;">
+                <h3>Acceso del Administrador</h3>
+                <p class="reseller-sub">Panel exclusivo del propietario de XIT CHEAT para gestionar archivos y revendedores.</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <input type="password" id="adminSecretKey" class="review-input" placeholder="Clave Maestra del Administrador" required>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button onclick="loginAdmin()" class="btn-submit-review" style="padding: 14px 40px; background: #e6a100;"><i class="fas fa-lock-open"></i> Desbloquear</button>
+                    <a href="#" onclick="toggleAdminView(false)" style="font-size: 11px; text-transform: uppercase; color: #555; font-weight: 700; text-decoration: none; letter-spacing: 1px;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='#555'">Volver a Revendedor</a>
+                </div>
+            </div>
+
+            <div id="resellerPanelArea" style="display: none;">
+                <h3>Panel de Revendedores VIP</h3>
+                <p class="reseller-sub" id="welcomeResellerTxt">Hola, revendedor. Aquí tienes las credenciales activas hoy.</p>
+
+                <div class="reseller-item-box">
+                    <div class="reseller-item-info">
+                        <p>Enlace del Archivo Diario (Toca para ir)</p>
+                        <h4 id="displayFileLink" style="font-size: 14px; color: #00ff6a; word-break: break-all; cursor: pointer; text-decoration: underline;" onclick="openFileLink()">No cargado</h4>
+                    </div>
+                    <button onclick="copyToClipboard('displayFileLink', '¡Enlace copiado!')" class="btn-copy-fast">Copiar Link</button>
+                </div>
+
+                <div class="reseller-item-box">
+                    <div class="reseller-item-info">
+                        <p>Usuario del Archivo</p>
+                        <h4 id="displayFileUser">No cargado</h4>
+                    </div>
+                    <button onclick="copyToClipboard('displayFileUser', '¡Usuario copiado!')" class="btn-copy-fast">Copiar User</button>
+                </div>
+
+                <div class="reseller-item-box">
+                    <div class="reseller-item-info">
+                        <p>Contraseña del Archivo</p>
+                        <h4 id="displayFilePass">No cargado</h4>
+                    </div>
+                    <button onclick="copyToClipboard('displayFilePass', '¡Contraseña copiada!')" class="btn-copy-fast">Copiar Clave</button>
+                </div>
+
+                <div style="text-align: right; margin-top: 25px;">
+                    <button onclick="logoutReseller()" class="btn-return-home" style="margin-bottom: 0;"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+                </div>
+            </div>
+
+            <div id="adminPanelArea" style="display: none;">
+                <h3>Panel del Dueño (Configuración)</h3>
+                <p class="reseller-sub">Actualiza los datos del archivo en vivo y administra los usuarios autorizados.</p>
+
+                <div style="margin-bottom: 30px;">
+                    <h4 style="font-family:'Rajdhani'; font-size: 16px; color: var(--red); margin-bottom: 12px; letter-spacing: 1px;"><i class="fas fa-file-export"></i> DATOS DEL ARCHIVO DIARIO</h4>
+                    <input type="text" id="editFileLink" class="review-input" placeholder="Pegar Enlace de Descarga (Mega, Drive, etc.)" style="margin-bottom: 10px;" required>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <input type="text" id="editFileUser" class="review-input" placeholder="User de hoy" required>
+                        <input type="text" id="editFilePass" class="review-input" placeholder="Pass de hoy" required>
+                    </div>
+                    <button onclick="saveFileData()" class="btn-submit-review" style="width: 100%; justify-content: center; background: #00ff6a; color: #000; box-shadow: none;"><i class="fas fa-save"></i> Guardar Cambios del Archivo</button>
+                </div>
+
+                <div class="admin-section">
+                    <h4 style="font-family:'Rajdhani'; font-size: 16px; color: var(--red); margin-bottom: 12px; letter-spacing: 1px;"><i class="fas fa-users-cog"></i> GESTIONAR LISTA DE REVENDEDORES</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                        <input type="text" id="newResellerUser" class="review-input" placeholder="Nuevo Usuario" required>
+                        <input type="text" id="newResellerPass" class="review-input" placeholder="Su Contraseña" required>
+                    </div>
+                    <button onclick="addNewReseller()" class="btn-submit-review" style="width: 100%; justify-content: center;"><i class="fas fa-user-plus"></i> Registrar Nuevo Revendedor</button>
+
+                    <div class="reseller-list-admin" id="resellerListAdminBox">
+                    </div>
+                </div>
+
+                <div style="text-align: right; margin-top: 25px;">
+                    <button onclick="logoutAdmin()" class="btn-return-home" style="margin-bottom: 0;"><i class="fas fa-sign-out-alt"></i> Salir del Panel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav>
         <div style="display:flex; align-items:center; gap:15px;">
             <a href="#" class="logo">XIT CHEAT</a>
@@ -334,93 +427,55 @@
             <a href="#servicios">Productos</a>
             <a href="#" onclick="openOverlay('portOverlay')">Demostración</a>
             <a href="#" onclick="openOverlay('reviewsOverlay')">Reseñas</a>
+            <a href="#" onclick="openOverlay('resellersOverlay')">Revendedores</a>
             <a href="#faq">Preguntas</a>
             <a href="#normativa">Reglas</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <h1>XIT <span>CHEAT</span></h1>
         <p>Herramientas y optimizaciones de código privado para comunidades de alto rendimiento. Máxima estabilidad, bypass indetectable y soporte premium garantizado.</p>
         <a href="#servicios" class="btn-main">Explorar Catálogo</a>
     </section>
 
-    <!-- PRODUCTOS -->
     <section class="section" id="servicios">
         <div class="title-wrapper"><h2>PRODUCTOS ÉLITE</h2><div class="title-divider"></div></div>
         <div class="grid">
-            
             <div class="card">
                 <h3 style="font-family: 'Rajdhani'; font-size: 24px; letter-spacing: 1px; font-weight: 700;">PANEL BASIC/PREMIUM</h3>
                 <p style="color:#555; margin-bottom:15px; font-size: 13px; font-weight: 500;">Interfaces exclusivas con configuraciones de memoria a medida.</p>
-                
                 <div class="price-container">
-                    <div class="price-row">
-                        <span class="price-duration">Plan 1 Día</span>
-                        <span class="price-amount">2$ US</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-duration">Plan Semanal</span>
-                        <span class="price-amount">5$ US</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-duration">Plan Mensual</span>
-                        <span class="price-amount">17$ US</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-duration">Plan Anual</span>
-                        <span class="price-amount">35$ US</span>
-                    </div>
+                    <div class="price-row"><span class="price-duration">Plan 1 Día</span><span class="price-amount">2$ US</span></div>
+                    <div class="price-row"><span class="price-duration">Plan Semanal</span><span class="price-amount">5$ US</span></div>
+                    <div class="price-row"><span class="price-duration">Plan Mensual</span><span class="price-amount">17$ US</span></div>
+                    <div class="price-row"><span class="price-duration">Plan Anual</span><span class="price-amount">35$ US</span></div>
                 </div>
                 <button class="btn-buy" onclick="openModal()">Adquirir Licencia</button>
             </div>
-            
             <div class="card">
                 <h3 style="font-family: 'Rajdhani'; font-size: 24px; letter-spacing: 1px; font-weight: 700;">PROXY IOS</h3>
                 <p style="color:#555; margin-bottom:15px; font-size: 13px; font-weight: 500;">Optimización avanzada de red y tráfico para sistemas iOS.</p>
-                
                 <div class="price-container">
-                    <div class="price-row">
-                        <span class="price-duration">Plan 1 Día</span>
-                        <span class="price-amount">3$ US</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-duration">Plan Semanal</span>
-                        <span class="price-amount">20$ US</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-amount">40$ US</span>
-                    </div>
+                    <div class="price-row"><span class="price-duration">Plan 1 Día</span><span class="price-amount">3$ US</span></div>
+                    <div class="price-row"><span class="price-duration">Plan Semanal</span><span class="price-amount">20$ US</span></div>
+                    <div class="price-row"><span class="price-amount">40$ US</span></div>
                 </div>
                 <button class="btn-buy" onclick="openModal()">Adquirir Licencia</button>
             </div>
-
             <div class="card">
                 <h3 style="font-family: 'Rajdhani'; font-size: 24px; letter-spacing: 1px; font-weight: 700;">BYPASS SISTEMA</h3>
                 <p style="color:#555; margin-bottom:15px; font-size: 13px; font-weight: 500;">Máxima protección a nivel de Kernel para emuladores competitivos.</p>
-                
                 <div class="price-container">
-                    <div class="price-row">
-                        <span class="price-duration">Plan Semanal</span>
-                        <span class="price-amount">6$ US</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-duration">Plan Mensual</span>
-                        <span class="price-amount">20$ US</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-duration">Plan Anual</span>
-                        <span class="price-amount">45$ US</span>
-                    </div>
+                    <div class="price-row"><span class="price-duration">Plan Semanal</span><span class="price-amount">6$ US</span></div>
+                    <div class="price-row"><span class="price-duration">Plan Mensual</span><span class="price-amount">20$ US</span></div>
+                    <div class="price-row"><span class="price-duration">Plan Anual</span><span class="price-amount">45$ US</span></div>
                 </div>
                 <button class="btn-buy" onclick="openModal()">Adquirir Licencia</button>
             </div>
-
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section" id="faq">
         <div class="title-wrapper"><h2>PREGUNTAS CLAVE</h2><div class="title-divider"></div></div>
         <div style="max-width:900px; margin:0 auto;">
@@ -435,7 +490,6 @@
         </div>
     </section>
 
-    <!-- NORMATIVA -->
     <section class="section" id="normativa">
         <div class="title-wrapper"><h2>TÉRMINOS & REGLAS</h2><div class="title-divider"></div></div>
         <div class="rules-wrapper">
@@ -453,11 +507,133 @@
         &copy; 2026 XIT CHEAT - ELITE SOFTWARE DEVELOPMENTS
     </footer>
 
-    <!-- LÓGICA COMPLETA DE SCRIPTS ORIGINALES SIN ERRORES -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // ESTO ES LO MÁS IMPORTANTE: Definir configuración predeterminada limpia
+        const defaults = {
+            fileLink: 'https://mega.nz/folder/ejemplo-xit-cheat',
+            fileUser: 'XIT_PRO_RES',
+            filePass: 'PASS_XIT_2026',
+            resellers: [ {username: 'revendedor1', password: '123', deviceId: null} ],
+            adminPass: 'DANIEL-2'
+        };
+
+        // PRIORIZAR CARGA DESDE LOCALSTORAGE AL INICIAR
+        let localConfig = JSON.parse(localStorage.getItem('xit_local_database')) || defaults;
+
+        // VINCULAR DISPOSITIVO ÚNICO
+        let myDeviceId = localStorage.getItem('xit_device_id');
+        if (!myDeviceId) {
+            myDeviceId = 'xit_dev_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            localStorage.setItem('xit_device_id', myDeviceId);
+        }
+
+        function saveLocal() {
+            localStorage.setItem('xit_local_database', JSON.stringify(localConfig));
+            updateUIVisual(localConfig);
+        }
+
+        // --- LÓGICA DE ACTUALIZACIÓN VISUAL ---
+        function updateUIVisual(data) {
+            document.getElementById('editFileLink').value = data.fileLink || '';
+            document.getElementById('editFileUser').value = data.fileUser || '';
+            document.getElementById('editFilePass').value = data.filePass || '';
+
+            document.getElementById('displayFileLink').innerText = data.fileLink || 'Aún no asignado';
+            document.getElementById('displayFileUser').innerText = data.fileUser || 'Aún no asignado';
+            document.getElementById('displayFilePass').innerText = data.filePass || 'Aún no asignado';
+
+            const listContainer = document.getElementById('resellerListAdminBox');
+            listContainer.innerHTML = '';
+            
+            if (data.resellers && data.resellers.length > 0) {
+                data.resellers.forEach((res, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'reseller-list-item';
+                    const isLinked = res.deviceId ? '🔒 Vinculado' : '🔓 Libre';
+                    div.innerHTML = `
+                        <span>👤 <b>${res.username}</b> - <span style="color:${res.deviceId ? '#ff003c' : '#00ff6a'}; font-weight:bold;">${isLinked}</span></span>
+                        <div style="display:flex; gap:10px; align-items:center;">
+                            ${res.deviceId ? `<button onclick="window.resetResellerDevice(${index})" class="btn-copy-fast" style="background:#ffaa00; color:#000; font-size:9px; padding:4px 8px;">Reset HWID</button>` : ''}
+                            <button onclick="window.removeReseller(${index})" class="btn-delete-reseller"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    listContainer.appendChild(div);
+                });
+            }
+        }
+
+        // Carga inicial
+        updateUIVisual(localConfig);
+
+        // --- FUNCIONES EXPUESTAS AL WINDOW ---
+        window.loginReseller = function() {
+            const userIn = document.getElementById('resellerUser').value.trim();
+            const passIn = document.getElementById('resellerPass').value.trim();
+            const found = localConfig.resellers.find(r => r.username === userIn && r.password === passIn);
+
+            if (found) {
+                if (found.deviceId && found.deviceId !== myDeviceId) {
+                    window.showToast("ERROR: Cuenta vinculada a otro dispositivo.", true);
+                    return;
+                }
+                if (!found.deviceId) {
+                    found.deviceId = myDeviceId;
+                    saveLocal();
+                }
+                document.getElementById('resellerLoginForm').style.display = 'none';
+                document.getElementById('resellerPanelArea').style.display = 'block';
+                document.getElementById('welcomeResellerTxt').innerText = `Hola, ${userIn}. Credenciales activas:`;
+                window.showToast("Acceso Concedido.");
+            } else {
+                window.showToast("Usuario o contraseña incorrectos.", true);
+            }
+        };
+
+        window.loginAdmin = function() {
+            if (document.getElementById('adminSecretKey').value.trim() === (localConfig.adminPass || 'DANIEL-2')) {
+                document.getElementById('adminLoginForm').style.display = 'none';
+                document.getElementById('adminPanelArea').style.display = 'block';
+                window.showToast("Bienvenido, Propietario.");
+            } else {
+                window.showToast("Clave maestra incorrecta.", true);
+            }
+        };
+
+        window.saveFileData = function() {
+            localConfig.fileLink = document.getElementById('editFileLink').value;
+            localConfig.fileUser = document.getElementById('editFileUser').value;
+            localConfig.filePass = document.getElementById('editFilePass').value;
+            saveLocal();
+            window.showToast("¡Datos guardados!");
+        };
+
+        window.addNewReseller = function() {
+            const u = document.getElementById('newResellerUser').value.trim();
+            const p = document.getElementById('newResellerPass').value.trim();
+            if (localConfig.resellers.some(r => r.username === u)) return window.showToast("Usuario ya existe.", true);
+            localConfig.resellers.push({ username: u, password: p, deviceId: null });
+            saveLocal();
+            window.showToast("Nuevo revendedor añadido.");
+        };
+
+        window.removeReseller = function(i) {
+            localConfig.resellers.splice(i, 1);
+            saveLocal();
+        };
+
+        window.resetResellerDevice = function(i) {
+            localConfig.resellers[i].deviceId = null;
+            saveLocal();
+        };
+    </script>
+
     <script>
-        // CARGA ORIGINAL NATIVA RE-ESTABLECIDA COMO ESTABA ANTES
         function startLoader() {
             let fill = document.getElementById('fill');
             let width = 0;
@@ -465,13 +641,9 @@
                 if (width >= 100) {
                     clearInterval(interval);
                     document.getElementById('loader').style.opacity = '0';
-                    setTimeout(() => { 
-                        document.getElementById('loader').style.display = 'none'; 
-                        document.body.style.overflow = 'auto'; 
-                    }, 800);
+                    setTimeout(() => { document.getElementById('loader').style.display = 'none'; document.body.style.overflow = 'auto'; }, 800);
                 } else {
-                    width += Math.floor(Math.random() * 20) + 10;
-                    if(width > 100) width = 100;
+                    width += 20;
                     fill.style.width = width + '%';
                 }
             }, 100);
@@ -480,94 +652,44 @@
         particlesJS("particles-js", { "particles": { "number": { "value": 50 }, "color": { "value": "#ff003c" }, "opacity": { "value": 0.12 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 140, "color": "#ff003c", "opacity": 0.12 }, "move": { "enable": true, "speed": 1.2 } } });
 
         const glow = document.getElementById('glow');
-        document.addEventListener('mousemove', (e) => { 
-            glow.style.left = e.clientX + 'px'; 
-            glow.style.top = e.clientY + 'px'; 
-        });
+        document.addEventListener('mousemove', (e) => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; });
 
-        // TOAST NOTIFICACIÓN ULTRA PRO (EVITA USAR ALERT)
-        function showToast(message, isInfo = false) {
+        window.showToast = function(message, isInfo = false) {
             const toast = document.getElementById('successToast');
             const toastText = document.getElementById('toastText');
             const toastIcon = document.getElementById('toastIcon');
-            
             toastText.innerText = message;
-            
-            if (isInfo) {
-                toastIcon.innerHTML = '<i class="fas fa-info-circle"></i>';
-                toastIcon.style.background = '#ffaa00';
-            } else {
-                toastIcon.innerHTML = '<i class="fas fa-check"></i>';
-                toastIcon.style.background = 'var(--red)';
-            }
-            
+            toastIcon.innerHTML = isInfo ? '<i class="fas fa-info-circle"></i>' : '<i class="fas fa-check"></i>';
+            toastIcon.style.background = isInfo ? '#ffaa00' : 'var(--red)';
             toast.classList.add('active');
-            setTimeout(() => {
-                toast.classList.remove('active');
-            }, 4000);
+            setTimeout(() => { toast.classList.remove('active'); }, 4000);
         }
 
         function toggleCustomRank() {
             const select = document.getElementById('revTag');
             const container = document.getElementById('customRankContainer');
-            const customInput = document.getElementById('revCustomTag');
-            
-            if (select.value === 'Otros') {
-                container.style.display = 'block';
-                customInput.setAttribute('required', 'true');
-            } else {
-                container.style.display = 'none';
-                customInput.removeAttribute('required');
-                customInput.value = '';
-            }
-        }
-
-        function sanitizeText(text) {
-            const forbiddenWords = [
-                "mmg", "mmgbo", "mamaguebo", "singar", "coño", "mierda", "mielda", "pendejo", 
-                "cabron", "cabrón", "hijo de puta", "hdp", "bichote", "qlq", "puta", "puto"
-            ];
-            
-            let sanitized = text;
-            forbiddenWords.forEach(word => {
-                const regex = new RegExp(`\\b${word}\\b|${word}`, 'gi');
-                sanitized = sanitized.replace(regex, "*".repeat(word.length));
-            });
-            return sanitized;
+            container.style.display = select.value === 'Otros' ? 'block' : 'none';
         }
 
         function sendReview(event) {
             event.preventDefault();
-            
             const webhookURL = "https://discord.com/api/webhooks/1514762513781362698/YruXmB57rOD5zTunWByKW5oYB2HEllHqdEA_uzOADZ6iX30Cvj6jfXdURZVaOEGxwtas";
-
-            const rawName = document.getElementById('revName').value;
-            const name = sanitizeText(rawName);
-
-            let tag = document.getElementById('revTag').value;
-            if (tag === 'Otros') {
-                const rawCustomTag = document.getElementById('revCustomTag').value.trim();
-                tag = sanitizeText(rawCustomTag) || "Otros";
-            }
-
+            const name = document.getElementById('revName').value;
+            let tag = document.getElementById('revTag').value === 'Otros' ? document.getElementById('revCustomTag').value : document.getElementById('revTag').value;
             const product = document.getElementById('revProduct').value;
             const stars = document.getElementById('revStars').value;
-            
-            const rawComment = document.getElementById('revComment').value;
-            const comment = sanitizeText(rawComment);
+            const comment = document.getElementById('revComment').value;
 
-            // EMBED ORIGINAL E IMPECABLE SEGÚN Screenshot_2_3.png VERBATIM
             const discordPayload = {
                 embeds: [{
-                    title: "🌟 ¡NUEVA RESEÑA VERIFICADA EN LA TIENDA! 🌟",
-                    description: "Se ha recibido una nueva valoración sobre los productos desde el panel de control web.",
-                    color: 16711740, 
+                    title: "🌟 ¡NUEVA RESEÑA VERIFICADA!",
+                    color: 16711740,
                     fields: [
-                        { name: "👤 Cliente / Nickname", value: "```" + name + "```", inline: true },
-                        { name: "🏷️ Rango / Tag", value: "```" + tag + "```", inline: true },
-                        { name: "📦 Producto Adquirido", value: "```" + product + "```", inline: false },
+                        { name: "👤 Cliente", value: "```" + name + "```", inline: true },
+                        { name: "🏷️ Rango", value: "```" + tag + "```", inline: true },
+                        { name: "📦 Producto", value: "```" + product + "```", inline: false },
                         { name: "⭐ Calificación", value: stars, inline: false },
-                        { name: "💬 Comentario / Testimonio", value: '"*' + comment + '*"', inline: false }
+                        { name: "💬 Comentario", value: '"*' + comment + '*"', inline: false }
                     ],
                     footer: { text: "⚡ XIT CHEAT | Feedback System" },
                     timestamp: new Date()
@@ -580,52 +702,44 @@
                 body: JSON.stringify(discordPayload)
             })
             .then(function() {
-                // Inserción visual local sin recargar
-                const reviewsList = document.getElementById('reviewsList');
-                const newCard = document.createElement('div');
-                newCard.style.background = "rgba(255,255,255,0.01)";
-                newCard.style.padding = "40px";
-                newCard.style.borderRadius = "25px";
-                newCard.style.border = "1px solid var(--glass-border)";
-                newCard.style.marginBottom = "20px";
-                
-                newCard.innerHTML = '<p style="color:#ffcc00; font-size: 14px;">' + stars + ' • <span style="color: var(--red); font-weight:600; font-size:11px; letter-spacing:1px;">🛡️ ' + product.toUpperCase() + '</span></p>' +
-                                    '<p style="margin-top:15px; color:#ddd; font-style:italic; font-size:15px; line-height:1.6;">"' + comment + '"</p>' +
-                                    '<p style="margin-top:20px; color:var(--red); font-weight:700; font-family:\'Rajdhani\'; font-size:18px;">- ' + name + ' (' + tag + ')</p>';
-                
-                reviewsList.insertBefore(newCard, reviewsList.firstChild);
-                
-                // Activar la alerta flotante nativa (successToast) de forma nítida
-                showToast("¡Reseña publicada con éxito!", false);
-
+                showToast("¡Reseña publicada con éxito!");
                 document.getElementById('webhookReviewForm').reset();
-                toggleCustomRank();
             })
-            .catch(function(err) {
-                console.error("Error de envío:", err);
-                showToast("Ocurrió un problema de red al procesar los datos.", true);
-            });
+            .catch(() => showToast("Error de conexión.", true));
+        }
+
+        function toggleAdminView(showAdmin) {
+            document.getElementById('resellerLoginForm').style.display = showAdmin ? 'none' : 'block';
+            document.getElementById('adminLoginForm').style.display = showAdmin ? 'block' : 'none';
+        }
+
+        function logoutReseller() {
+            document.getElementById('resellerPanelArea').style.display = 'none';
+            document.getElementById('resellerLoginForm').style.display = 'block';
+        }
+
+        function logoutAdmin() {
+            document.getElementById('adminPanelArea').style.display = 'none';
+            document.getElementById('resellerLoginForm').style.display = 'block';
+        }
+
+        function copyToClipboard(elementId, successMsg) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => showToast(successMsg));
         }
 
         function openOverlay(id) { document.getElementById(id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-        function closeOverlay(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
+        function closeOverlay(id) { document.getElementById('resellerUser').value = ''; document.getElementById('resellerPass').value = ''; document.getElementById(id).style.display = 'none'; document.body.style.overflow = 'auto'; }
         function openModal() { document.getElementById('contactModal').style.display = 'flex'; }
         function closeModal() { document.getElementById('contactModal').style.display = 'none'; }
-        
-        function triggerPaypalAlert() { 
-            showToast("Abre ticket en Discord para pagos vía PayPal.", true); 
-        }
+        function triggerPaypalAlert() { showToast("Abre ticket en Discord para pagos vía PayPal.", true); }
+        function openFileLink() { const link = document.getElementById('displayFileLink').innerText; if(link.startsWith('http')) window.open(link, '_blank'); }
 
-        // Notificaciones simuladas cada 25 segundos
         setInterval(() => {
             const nombresFake = ["Xenon_RD", "Drippy_99", "MambaXIT", "Tego_Cheat", "Lápiz_VIP", "Klk_User", "Shadow_X", "Nexus_Cheat"];
-            const productosFake = ["adquirió un Panel Premium de 30 Días", "adquirió un Bypass Sistema (7 Días)", "adquirió una Licencia Completa (PC)", "renovó su Acceso Élite Mensual"];
-            const randomNombre = nombresFake[Math.floor(Math.random() * nombresFake.length)];
-            const randomProducto = productosFake[Math.floor(Math.random() * productosFake.length)];
-            
-            document.getElementById('notifUser').innerText = randomNombre;
-            document.getElementById('notifItem').innerText = randomProducto;
-
+            const productosFake = ["adquirió un Panel Premium", "adquirió un Bypass", "adquirió una Licencia Completa"];
+            document.getElementById('notifUser').innerText = nombresFake[Math.floor(Math.random() * nombresFake.length)];
+            document.getElementById('notifItem').innerText = productosFake[Math.floor(Math.random() * productosFake.length)];
             document.getElementById('saleNotif').classList.add('active');
             setTimeout(() => { document.getElementById('saleNotif').classList.remove('active'); }, 5000);
         }, 25000);
